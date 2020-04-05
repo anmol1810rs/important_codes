@@ -1,0 +1,71 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+ 
+void merge(vector<int> &arr,vector<int> &temp, int low,int mid,int high){
+    int i = low;// low to mid
+    int j = mid+1;// mid+1 to high
+   
+    int y=0;//Starting y with 0
+    while( i<=mid && j<=high ){
+        if(arr[i]<=arr[j]){
+            temp[y]=arr[i];
+            i++;y++;
+        }else{
+            temp[y]=arr[j];
+            j++;y++;   
+        }
+    }
+    // i was still not the end till mid
+    while(i<=mid){
+        temp[y++]=arr[i];i++;
+    }
+    // j was still not the end !
+    while(j<=high){
+        temp[y++]=arr[j];j++;
+    }
+   
+    //Filling back to main array!
+    for(int k=low,y=0;k<=high;k++,y++){
+        arr[k] = temp[x];// temp[0] -> arr[low]
+    }
+    //Thats it!
+}
+ 
+void mergeSort(vector<int> &arr,vector<int> &temp, int low,int high){
+    if(low>=high) return;
+   
+    int mid = (low+high)/2;
+    // Break into two peices
+    mergeSort(arr,temp,low,mid);
+    mergeSort(arr,temp,mid+1,high);
+    //as both above problems are in sorted order we can merge!
+    merge(arr,temp,low,mid,high);
+}
+ 
+int main(){
+ 
+    vector<int> data{12, 14, 112, 113, 15, 19, 100};
+    vector<int>temp(data.size());
+   
+    // Calling merge !
+    mergeSort(data,temp,0,data.size()-1);
+       
+    for(int i=0;i<data.size();i++){
+        cout<<data[i]<<endl;
+    }  
+    return 0;
+}
+
+
+/*comments####################################################################################################*/
+#include <iostream> 
+#include <vector>
+#include <algorithm> 
+using namespace std; 
+
+void merge(vector<int> &arr,vector<int> &temp, int low,int mid,int high){
+	int i = low;// low to mid
+	int j = mid+1;// mid+1 to high
+/*comments####################################################################################################*/	

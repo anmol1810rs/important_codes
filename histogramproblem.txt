@@ -1,0 +1,55 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <math.h>
+using namespace std;
+ 
+int main(){
+   
+    int arr [5][5] = {
+                    {0,1,0,1,0},
+                    {0,1,1,1,1},
+                    {1,1,0,1,1},
+                    {0,1,0,1,1},
+                    {0,0,0,0,0}
+                   };
+   
+    // 1. Build histogram for all columns !
+    // 2. Find maximum area for sorted histogram of each row
+    // 3. Find which row gave the maximum ans !
+       
+        int r = 5;
+        int c = 5;
+ 
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                if(arr[i][j]!=0 && i>0 ){
+                    arr[i][j] = arr[i-1][j] + 1;// same column !
+                }
+            }
+        }
+        // O (N^2)
+       
+        int max_area = 0;
+       
+        // O ( N^2 log N )
+        for(int i=0;i<r;i++){          
+            // For each row TC -> O ( N log N )
+            vector<int> histogram;
+            for(int j=0;j<c;j++){
+                histogram.push_back(arr[i][j]);
+            }
+           
+            // sorted histogram !
+            sort(histogram.begin(), histogram.end());//  n log n
+           
+            for(int j=0;j<c;j++){
+                max_area = max(max_area, histogram[j]*(c-j) );
+            }
+        }
+       
+        // TC final ~ O ( N^2 log N )
+       
+        cout<< max_area;       
+    return 0;
+}

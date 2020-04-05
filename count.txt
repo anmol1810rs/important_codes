@@ -1,0 +1,23 @@
+day 14:
+27
+important questions:
+fctrl ,muffins3,horses,fctrl2,double,cooling(can work with two loops o(n*n) also accepted..
+cnote,anuund,la liga question(great use of unorder maps),cells with odd values in a matrix
+
+skipped: total hamming distance(very important your logic didnt work propely);pair of songs with duration divisible by 60
+comm3,nukes,lepermut,candle,mstep,wtch,chn08,mstick,lastdig(didnt understand clearly do it again)
+tidrice,chno8,robot and paths,fitplay,parenthesis,tsecj05,devugrap,merge sorted linked list (leet code),best time to buy and sell stock,
+powerful integers;subarray bitwise ORs,merge sort on linked list ,add to array form of integer(leetcode),buddy strings,alien dictionary(do again important hai).
+3sum with multiplicity,next greater element,kth largest erlemtn in a stream
+
+very very imp ques:
+gcdq,strch,guess,resn04(just see the logic once its kinda confusing)
+coockmatch (keep dividing until both become equal),cielrcpt,resist,rratin(using hash maps soon to be taught completely)...
+mnmx(not that logical pehle minimum nikal phir size -1 se multiply kar de ..remember this logic )
+altaray,bear and candies,walk(easy),chefsum(very very important),cops and thief devu(very important),talazy(recursive try karo )...
+buggy calculator(do it simple dont complicate it ),find length of last word in string, 
+backspace string compare ,check if a string will be able to contain string if long pressed(leetcode)...,longest palindrome (leetcode)'s
+height checker (very easy just think a bit differently),binary gap(v v v imp)
+
+time exceeding:
+lastdig
